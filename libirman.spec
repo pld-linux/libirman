@@ -6,6 +6,7 @@ Release:	0
 License:	GPL
 Group:		Libraries
 Source0:	http://www.lirc.org/software/snapshots/%{name}-%{version}.tar.gz
+# Source0-md5:	05063520a299db923689899351986204
 URL:		http://www.lirc.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
