@@ -1,5 +1,5 @@
-Summary:	libirman
-Summary(pl):	libirman
+Summary:	libirman - accessing IRMAN hardware
+Summary(pl):	libirman - dostêp do urz±dzeñ IRMAN
 Name:		libirman
 Version:	0.4.2
 Release:	0
@@ -16,7 +16,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 libirman is a library for accessing the IRMAN hardware from Linux.
 
 %description -l pl
-Biblioteka libirman umo¿liwia dostêp do urz±dzenia IRMAN w Linuksie
+Biblioteka libirman umo¿liwia dostêp do urz±dzenia IRMAN w Linuksie.
 
 %prep
 %setup -q
@@ -31,6 +31,7 @@ Biblioteka libirman umo¿liwia dostêp do urz±dzenia IRMAN w Linuksie
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir},%{_sysconfdir},%{_includedir}}
+
 install workmanir $RPM_BUILD_ROOT%{_bindir}
 install libirman.a $RPM_BUILD_ROOT%{_libdir}
 install irman.conf $RPM_BUILD_ROOT%{_sysconfdir}
@@ -42,6 +43,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
-%{_libdir}/*
+%{_libdir}/lib*.a
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/*
-%{_includedir}/*
+%{_includedir}/*.h
