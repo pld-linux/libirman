@@ -7,6 +7,8 @@ License:	GPL
 Group:		Libraries
 Source0:	http://www.lirc.org/software/snapshots/%{name}-%{version}.tar.gz
 URL:		http://www.lirc.org/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -19,7 +21,7 @@ Biblioteka libirman umo¿liwia dostêp do urz±dzenia IRMAN w Linuksie
 %setup -q
 
 %build
-aclocal
+%{__aclocal}
 %{__autoconf}
 
 %configure
@@ -38,7 +40,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}
-%attr(755,root,root) %{_libdir}
-%{_sysconfdir}
-%{_includedir}
+%attr(755,root,root) %{_bindir}/*
+%{_libdir}/*
+%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/*
+%{_includedir}/*
