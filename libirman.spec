@@ -20,7 +20,7 @@ Biblioteka libirman umo¿liwia dostêp do urz±dzenia IRMAN w Linuksie
 
 %build
 aclocal
-autoconf
+%{__autoconf}
 
 %configure
 %{__make}
