@@ -5,13 +5,6 @@ Version:	0.4.2
 Release:	0
 License:	GPL
 Group:		Libraries
-Group(de):	Libraries
-Group(es):	Bibliotecas
-Group(fr):	Librairies
-Group(pl):	Biblioteki
-Group(pt_BR):	Bibliotecas
-Group(ru):	Библиотеки
-Group(uk):	Б╕бл╕отеки
 Source0:	http://www.lirc.org/software/snapshots/%{name}-%{version}.tar.gz
 URL:		http://www.lirc.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
