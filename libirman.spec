@@ -5,8 +5,8 @@ Version:	0.4.2
 Release:	0
 License:	GPL
 Group:		Libraries
-Source0:	http://www.lirc.org/software/snapshots/%{name}-%{version}.tar.gz
-# Source0-md5:	05063520a299db923689899351986204
+Source0:	http://lirc.sf.net/software/snapshots/%{name}-%{version}.tar.gz
+# Source0-md5:	b99017d049685cb84a95098190a89de8
 URL:		http://www.lirc.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
