@@ -1,12 +1,12 @@
 Summary:	libirman - accessing IRMAN hardware
 Summary(pl):	libirman - dostêp do urz±dzeñ IRMAN
 Name:		libirman
-Version:	0.4.2
-Release:	0
+Version:	0.4.3
+Release:	1
 License:	GPL
 Group:		Libraries
-Source0:	http://lirc.sf.net/software/snapshots/%{name}-%{version}.tar.gz
-# Source0-md5:	b99017d049685cb84a95098190a89de8
+Source0:	http://lirc.sourceforge.net/software/snapshots/%{name}-%{version}.tar.gz
+# Source0-md5:	b28e9ab2fd9b1506201f5f84e10a8aa6
 URL:		http://www.lirc.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -24,7 +24,6 @@ Biblioteka libirman umo¿liwia dostêp do urz±dzenia IRMAN w Linuksie.
 %build
 %{__aclocal}
 %{__autoconf}
-
 %configure
 %{__make}
 
