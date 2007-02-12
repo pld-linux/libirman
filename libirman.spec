@@ -1,5 +1,5 @@
 Summary:	libirman - accessing IRMAN hardware
-Summary(pl):	libirman - dostêp do urz±dzeñ IRMAN
+Summary(pl.UTF-8):   libirman - dostÄ™p do urzÄ…dzeÅ„ IRMAN
 Name:		libirman
 Version:	0.4.3
 Release:	1
@@ -15,8 +15,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 libirman is a library for accessing the IRMAN hardware from Linux.
 
-%description -l pl
-Biblioteka libirman umo¿liwia dostêp do urz±dzenia IRMAN w Linuksie.
+%description -l pl.UTF-8
+Biblioteka libirman umoÅ¼liwia dostÄ™p do urzÄ…dzenia IRMAN w Linuksie.
 
 %prep
 %setup -q
