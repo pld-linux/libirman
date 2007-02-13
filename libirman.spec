@@ -1,5 +1,5 @@
 Summary:	libirman - accessing IRMAN hardware
-Summary(pl.UTF-8):   libirman - dostęp do urządzeń IRMAN
+Summary(pl.UTF-8):	libirman - dostęp do urządzeń IRMAN
 Name:		libirman
 Version:	0.4.3
 Release:	1
