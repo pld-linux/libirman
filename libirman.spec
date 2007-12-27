@@ -1,12 +1,12 @@
 Summary:	libirman - accessing IRMAN hardware
 Summary(pl.UTF-8):	libirman - dostęp do urządzeń IRMAN
 Name:		libirman
-Version:	0.4.3
+Version:	0.4.4
 Release:	1
 License:	GPL
 Group:		Libraries
 Source0:	http://lirc.sourceforge.net/software/snapshots/%{name}-%{version}.tar.gz
-# Source0-md5:	b28e9ab2fd9b1506201f5f84e10a8aa6
+# Source0-md5:	b3898fb7f0bc6995cee8950a1bd73368
 URL:		http://www.lirc.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
