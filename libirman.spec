@@ -10,6 +10,7 @@ Source0:	http://downloads.sourceforge.net/lirc/%{name}-%{version}.tar.bz2
 URL:		http://www.lirc.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
+BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
