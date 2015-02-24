@@ -2,7 +2,7 @@ Summary:	libirman - accessing IRMAN hardware
 Summary(pl.UTF-8):	libirman - dostęp do urządzeń IRMAN
 Name:		libirman
 Version:	0.4.5
-Release:	1
+Release:	2
 License:	LGPL v2 (library), GPL v2 (utility)
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/lirc/%{name}-%{version}.tar.bz2
