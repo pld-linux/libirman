@@ -1,0 +1,8 @@
+--- libirman-0.4.6/libirman.pc.in.orig	2015-08-18 18:42:10.000000000 +0200
++++ libirman-0.4.6/libirman.pc.in	2015-10-04 12:51:05.080527483 +0200
+@@ -8,4 +8,4 @@
+ includedir=@includedir@
+ 
+ Libs: -lirman
+-Cflags: -I${includedir} -fpic
++Cflags: -I${includedir}

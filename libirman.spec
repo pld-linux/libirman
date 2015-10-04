@@ -1,12 +1,13 @@
 Summary:	libirman - accessing IRMAN hardware
 Summary(pl.UTF-8):	libirman - dostęp do urządzeń IRMAN
 Name:		libirman
-Version:	0.4.5
-Release:	2
+Version:	0.4.6
+Release:	1
 License:	LGPL v2 (library), GPL v2 (utility)
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/lirc/%{name}-%{version}.tar.bz2
-# Source0-md5:	4a2708d53b6c79659c073cfefed57f78
+# Source0-md5:	11e8fe44c78ee615efd4d13b6cee1626
+Patch0:		%{name}-pc.patch
 URL:		http://www.lirc.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -47,6 +48,7 @@ Statyczna biblioteka libirman.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__libtoolize}
@@ -62,6 +64,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+# obsoleted by pkg-config
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libirman.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -80,8 +85,8 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libirman.so
-%{_libdir}/libirman.la
 %{_includedir}/irman.h
+%{_pkgconfigdir}/libirman.pc
 
 %files static
 %defattr(644,root,root,755)
