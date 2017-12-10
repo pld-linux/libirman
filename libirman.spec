@@ -5,19 +5,19 @@
 Summary:	libirman - accessing IRMAN hardware
 Summary(pl.UTF-8):	libirman - dostęp do urządzeń IRMAN
 Name:		libirman
-Version:	0.5.0
+Version:	0.5.2
 Release:	1
 License:	LGPL v2 (library), GPL v2 (utility)
 Group:		Libraries
-Source0:	http://downloads.sourceforge.net/lirc/%{name}-%{version}.tar.gz
-# Source0-md5:	871607ef62183a3314e8ec47aadbe578
+Source0:	http://downloads.sourceforge.net/libirman/%{name}-%{version}.tar.gz
+# Source0-md5:	1f1175995e527c41871077d278aa7448
 Patch0:		%{name}-pc.patch
-URL:		http://www.lirc.org/
+URL:		https://libirman.sourceforge.io/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	libtool
 # lirc-driver
-%{?with_lirc:BuildRequires:	lirc-devel > 0.9.3}
+%{?with_lirc:BuildRequires:	lirc-devel >= 0.9.4}
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -86,7 +86,8 @@ potrafią emulować protokół irman.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	--with-plugin%{!?with_lirc:=no}
 %{__make}
 
 %install
@@ -95,6 +96,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+# tests
+%{__rm} $RPM_BUILD_ROOT%{_bindir}/test_{func,io,name}
 # obsoleted by pkg-config
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/libirman.la
 %if %{with lirc}
