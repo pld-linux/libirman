@@ -1,12 +1,12 @@
 #
 # Conditional build:
-%bcond_with	lirc	# LIRC driver (for LIRC > 0.9.3)
+%bcond_without	lirc	# LIRC driver (for LIRC > 0.9.3)
 
 Summary:	libirman - accessing IRMAN hardware
 Summary(pl.UTF-8):	libirman - dostęp do urządzeń IRMAN
 Name:		libirman
 Version:	0.5.2
-Release:	1
+Release:	2
 License:	LGPL v2 (library), GPL v2 (utility)
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/libirman/%{name}-%{version}.tar.gz
@@ -58,7 +58,7 @@ Summary:	IRMAN plugin for LIRC
 Summary(pl.UTF-8):	Wtyczka IRMAN dla LIRC-a
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	lirc > 0.9.3
+Requires:	lirc >= 0.9.4
 
 %description -n lirc-plugin-irman
 IRMAN plugin for LIRC.
@@ -100,9 +100,6 @@ rm -rf $RPM_BUILD_ROOT
 %{__rm} $RPM_BUILD_ROOT%{_bindir}/test_{func,io,name}
 # obsoleted by pkg-config
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/libirman.la
-%if %{with lirc}
-%{__rm} $RPM_BUILD_ROOT%{_libdir}/lirc/plugins/irman.la
-%endif
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -131,7 +128,7 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with lirc}
 %files -n lirc-plugin-irman
 %defattr(644,root,root,755)
-%doc lirc-plugin/irman.html
 %attr(755,root,root) %{_libdir}/lirc/plugins/irman.so
 %{_datadir}/lirc/configs/irman.conf
+%{_docdir}/lirc/plugindocs/irman.html
 %endif
